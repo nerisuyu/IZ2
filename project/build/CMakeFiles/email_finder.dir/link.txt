@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -Werror -Wpedantic   --coverage -rdynamic CMakeFiles/email_finder.dir/main.c.o  -o email_finder  email_lib/libemail_lib.a -lm utils/libutils.a -lm 

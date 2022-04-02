@@ -1,2 +1,0 @@
-/usr/bin/ar qc libemail_lib.a  CMakeFiles/email_lib.dir/email.c.o
-/usr/bin/ranlib libemail_lib.a
