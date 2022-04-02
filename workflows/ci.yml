@@ -1,0 +1,72 @@
+name: CI
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Install components
+        run: |
+          pwd
+          make install_gtest
+          sudo apt-get -y install pip
+          sudo apt-get -y install cppcheck
+          sudo apt-get -y install clang-tidy
+          pip install cpplint
+          pip install scan-build
+      - name: Run linters
+        run:  make check
+  build:
+    runs-on: ubuntu-latest
+    needs: [check]
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Install gtest
+      run: make install_gtest
+    - name: Build
+      run: make build
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        path: main.out
+  test:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Install gtest
+        run: make install_gtest
+      - name: Build
+        run: make build
+      - name: Install valgrinds
+        run: |
+          sudo apt update -y
+          sudo apt-get install valgrind
+      - name: Run valgrind
+        run: |
+          valgrind --error-exitcode=-1 --tool=memcheck --leak-check=full ./project/build/email_finder
+      - name: Run tests
+        run: |
+          make test
+      - name: Run gcovr
+        run: |
+          sudo apt update -y
+          sudo apt-get install gcovr
+          mkdir -p gcovr_report
+          gcovr -r . --html -o gcovr_report/coverage.html --html-details 
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          path: gcovr_report/coverage.html
+      - name: Run gcov
+        run: |    
+          sudo apt install gcovr
+          gcovr      
+          gcov -abcfu ./project/build/**/CMakeFiles/**/*.gcno
+      - name: Codecov 
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          directory: /home/runner/work/DZ2/DZ2
+          token: ${{ secrets.CODECOV_TOKEN }}
