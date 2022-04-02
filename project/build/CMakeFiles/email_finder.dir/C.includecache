@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nerisuyu/VScode/DZ2/project/email_lib/email.h
+
+/home/nerisuyu/VScode/DZ2/project/main.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+email_lib/email.h
+/home/nerisuyu/VScode/DZ2/project/email_lib/email.h
+utils/utils.h
+/home/nerisuyu/VScode/DZ2/project/utils/utils.h
+
+/home/nerisuyu/VScode/DZ2/project/utils/utils.h
+

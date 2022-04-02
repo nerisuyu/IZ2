@@ -1,0 +1,12 @@
+/home/nerisuyu/VScode/DZ2/project/build/CMakeFiles/rebuild_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/CMakeFiles/edit_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/CMakeFiles/email_finder.dir
+/home/nerisuyu/VScode/DZ2/project/build/email_lib/CMakeFiles/rebuild_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/email_lib/CMakeFiles/edit_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/email_lib/CMakeFiles/email_lib.dir
+/home/nerisuyu/VScode/DZ2/project/build/utils/CMakeFiles/rebuild_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/utils/CMakeFiles/edit_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/utils/CMakeFiles/utils.dir
+/home/nerisuyu/VScode/DZ2/project/build/tests/CMakeFiles/rebuild_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/tests/CMakeFiles/edit_cache.dir
+/home/nerisuyu/VScode/DZ2/project/build/tests/CMakeFiles/test_email_finder.dir
